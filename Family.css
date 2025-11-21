@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    color: #110408;
+    background-color: #fbeffb;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    width: auto;
+    border: 10px solid #c6e698;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    width: 750px;
+    margin: 2rem auto;
+}
+
+main {
+    display: block;
+    background-color: #fbeffb;
+    padding: 1.25rem;
+}
+section {
+    display: block;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-left: 6px solid #d24670;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+h1 {
+    background-color: #d24670;
+    color: #ffffff;
+    text-align: center;
+    height: 100px;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+    color: #110408;
+}
+
+nav {
+    background-color: #fbeffb;
+    height: 100px;
+    padding: 1em;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer {
+    color: #d24670;
+}
+
+.LizsBigLittleFamily {
+    color: #d24670;
+}
