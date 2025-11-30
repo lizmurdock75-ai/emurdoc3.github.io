@@ -27,6 +27,7 @@ main {
     display: block;
     background-color: #fbeffb;
     padding: 1.25rem;
+    text-align: center;
 }
 section {
     display: block;
@@ -55,7 +56,6 @@ nav {
     background-color: #fbeffb;
     height: 100px;
     padding: 1em;
-    
 }
 
 nav ul {
@@ -63,6 +63,11 @@ nav ul {
     text-align: center;
     font-size: 1.5em;
     margin: 5px;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 nav li {
@@ -75,10 +80,103 @@ nav a {
     padding-right: 10px;
 }
 
+nav a.active {
+    border: 2px solid #d24670;
+    border-radius: 4px;
+    padding: 8px 10px;
+}
+
 footer {
     color: #d24670;
 }
 
 .LizsBigLittleFamily {
     color: #d24670;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.photo-item {
+    text-align: center;
+}
+
+.photo-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+.photo-item p {
+    margin-top: 1rem;
+    color: #110408;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.image-text-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.image-left {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.image-right {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.who-am-i-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.who-am-i-container section {
+    flex: 1;
+}
+
+.side-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    margin-top: 1rem;
+}
+
+@supports (display: grid) {
+   form { display: grid;
+       grid-template-rows: auto;
+       grid-template-columns: 6em 1fr;
+       gap: 1em;
+       background-color: #EAEAEA;
+       font-family: Arial, sans-serif;
+       width: 60%; min-width: 20em;
+       padding: 2em;
+       margin: 0 auto; }
+    input[type="submit"] { grid-column: 2 / 3; width: 10em; margin-left: 0; }
 }
