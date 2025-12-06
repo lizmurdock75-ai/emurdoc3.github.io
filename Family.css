@@ -50,6 +50,8 @@ h1 {
 
 h2 {
     color: #110408;
+    font-size: 1.5rem;
+    line-height: 1.2;
 }
 
 nav {
@@ -106,16 +108,27 @@ footer {
 }
 
 .photo-item img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .photo-item img:hover {
     transform: scale(1.05);
+}
+
+/* Responsive: let gallery images scale on narrow screens */
+@media (max-width: 600px) {
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 .photo-item p {
@@ -124,6 +137,103 @@ footer {
     font-size: 0.95em;
     line-height: 1.5;
 }
+
+/* Responsive styling for family tree image */
+.tree-image {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Centered title that matches tree image width */
+.tree-title {
+    max-width: 75%;
+    margin: 0.5rem auto 0.75rem;
+    text-align: center;
+    font-size: 1.75rem;
+    color: #110408;
+}
+
+/* Table styling for family tree listing */
+.tree-table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+    width: auto;
+    max-width: 75%;
+    background: #fff;
+}
+.tree-table th,
+.tree-table td {
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 0.5rem 0.75rem;
+}
+.tree-table th {
+    background: #f7f7f7;
+    text-align: left;
+}
+.tree-table td {
+    text-align: center;
+}
+
+/* Layout: table with Murdock image to the right */
+.table-with-image {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.table-wrap {
+    /* left column fixed to table width */
+    flex: 0 0 300px;
+    align-self: flex-start;
+}
+.table-with-image .tree-table {
+    margin: 0 0 0 100px; /* nudge table slightly to the right */
+    max-width: 300px; /* limit table width */
+    width: 100%;
+}
+.tree-side {
+    flex: 1 1 auto; /* take remaining space */
+    text-align: right; /* keep image aligned to right edge of page column */
+}
+.tree-side-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+.table-title {
+    max-width: 300px;
+    margin: 0 0 0.5rem 100px; /* align with table left offset */
+    text-align: left;
+    font-size: 1.25rem;
+}
+.tree-side-title {
+    text-align: center;
+    font-size: 1.25rem;
+}
+.side-tree-image {
+    height: 600px;
+    width: auto;
+    max-width: 150%;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+}
+/* ensure side image sits at the right of its column */
+.tree-side .side-tree-image { display: block; margin-left: auto; max-width: 100%; }
+
+@media (max-width: 900px) {
+    .table-with-image {
+        flex-direction: column;
+    }
+    .tree-side {
+        flex: none;
+    }
+}
+
+
 
 .image-text-container {
     display: flex;
@@ -166,6 +276,69 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     margin-top: 1rem;
+}
+
+/* Video + meaning layout: video on the left, section on the right */
+.video-meaning {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.side-video {
+    width: 200px;
+    height: auto;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    margin-top: 1rem;
+}
+
+/* Stack video above content on narrow screens */
+@media (max-width: 700px) {
+    .video-meaning {
+        flex-direction: column;
+        align-items: center;
+    }
+    .side-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Lightbox / click-to-enlarge overlay */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+}
+.lightbox-overlay.open {
+    display: flex;
+}
+.lightbox-overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    border: none;
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 @supports (display: grid) {
